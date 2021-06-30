@@ -1,7 +1,5 @@
-# Programming-Assignment-2-Lexical-Scoping
 
 # # This function creates a special "matrix" object that can cache its inverse.
-
 makeCacheMatrix  <-  function( x  =  matrix ()) {
                  inve<-NULL
                  set <- function(y) {
@@ -16,12 +14,9 @@ makeCacheMatrix  <-  function( x  =  matrix ()) {
                       getinverse=getinverse)
 }
 
- # # This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
-                
+ # # This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.                
 cacheSolve  <- function ( x , ... ) {
-  # # Returns an array that is the inverse of 'x'
-                inve <- x$getinverse()
-                
+                inve <- x$getinverse()  
                  if(!is.null(inve)){
                         message("getting cached data")
                         return(inve)
@@ -31,6 +26,7 @@ cacheSolve  <- function ( x , ... ) {
                 x$setinverse(inve)
                 inve
 }
+
 m1<- makeCacheMatrix(matrix(1:4,nrow = 2,ncol = 2))
 m1$get()
 m1$getinverse()
